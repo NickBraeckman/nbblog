@@ -24,23 +24,23 @@ Enter Miniconda, a minimalist distribution that includes only Python, the essent
 
 ## Understanding Conda
 
-There are a number of ways to set up your system to do data science in Python. In this tutorial we will use a tool called [conda](https://docs.conda.io/projects/conda/en/latest/). Conda is both a package manager and environment manager.
+There are a number of ways to set up your system to do data science in Python. In this tutorial, we will use a tool called [conda](https://docs.conda.io/projects/conda/en/latest/). Conda is both a package manager and an environment manager.
 
-In the context of Python, a **package manager** is a tool that installs, updates and removes third-party Python packages. A third-party Python package is any Python package that is not a part of the Python standard library. The vast ecosystem of data science related packages (e.g. [pandas](https://pandas.pydata.org/), [NumPy](https://numpy.org/), [Matplotlib](https://matplotlib.org/), [scikit-learn](https://scikit-learn.org/), [TensorFlow](https://www.tensorflow.org/g) and more) make Python a go-to language for data enthusiasts.
+In the context of Python, a **package manager** is a tool that installs, updates and removes third-party Python packages. A third-party Python package is any Python package that is not part of the Python standard library. The vast ecosystem of data science-related packages (e.g. [pandas](https://pandas.pydata.org/), [NumPy](https://numpy.org/), [Matplotlib](https://matplotlib.org/), [scikit-learn](https://scikit-learn.org/), [TensorFlow](https://www.tensorflow.org/g) and more) make Python a go-to language for data enthusiasts.
 
-Another popular package manager is [pip](https://pypi.org/), which is the default package manager for new Python installations. In this tutorial we'll only touch on conda.
+Another popular package manager is [pip](https://pypi.org/), which is the default package manager for new Python installations. In this tutorial, we'll only touch on conda.
 
-An **environment manager** creates an isolated container on your computer, known as virtual environments, with their own installation of Python and third-party packages. This isolation ensures independence from any other Python installation on your machine.
+An **environment manager** creates an isolated container on your computer, known as a virtual environment, with their own installation of Python and third-party packages. This isolation ensures independence from any other Python installation on your machine.
 
 ## Advantages of Migrating to Miniconda
 
-1. **Efficient Resource Utilization** Anaconda comes preloaded with a lot of packages, some of which might be unnecessary for your specific workflows. Miniconda offers a minimalist approach, allowing you to install only what you need. This not only saves valuable storage space, but also ensures your system resources are dedicated to the tools and libraries you actually tend to use. Okay, in Anaconda you have the `conda clean --all` command, which basically cleans unused package cache and other files. However, Miniconda's smaller package footprint tends to be more efficient.
+1. **Efficient Resource Utilization** Anaconda comes preloaded with a lot of packages, some of which might be unnecessary for your specific workflows. Miniconda offers a minimalist approach, allowing you to install only what you need. This not only saves valuable storage space but also ensures your system resources are dedicated to the tools and libraries you actually tend to use. Okay, in Anaconda, you have the `conda clean --all` command, which basically cleans unused package cache and other files. However, Miniconda's smaller package footprint tends to be more efficient.
     
-2. **Simplified Environment Management** The [Anaconda Navigator](https://docs.anaconda.com/free/navigator/index.html), a graphical-user-interface became obsolete by the speed and simplicity of the command prompt or terminal. Creating a new environment might seem intimidating when you are just starting. However, you will quickly switch to the command prompt or terminal, since almost all tutorials you'll follow will use the command prompt or terminal. Embracing the command prompt or terminal will not only enhance efficiency but also integrates smoothly with your prefferred code editor.
+2. **Simplified Environment Management** The [Anaconda Navigator](https://docs.anaconda.com/free/navigator/index.html), a graphical user interface became obsolete with the speed and simplicity of the command prompt or terminal. Creating a new environment might seem intimidating when you are just starting. However, you will quickly switch to the command prompt or terminal, since almost all tutorials you'll follow will use the command prompt or terminal. Embracing the command prompt or terminal will not only enhance efficiency but also integrate smoothly with your preferred code editor.
     
 3. **Streamlined Deployment** Deploying your code on production servers can be a daunting task, especially when you are dealing with the unnecessary bloat from Anaconda. Miniconda simplifies the deployment process by allowing you to create virtual environments with only the essential packages, ensuring a clean and efficient runtime on production servers.
 
-## Step-by-step Approach
+## Step-by-Step Approach
 
 ### 1\. (Optional) Export Environment Files
 
@@ -76,7 +76,7 @@ prefix: C:\Users\YourUsername\Anaconda3\envs\your_environment_name
 
 This information is used when you or someone else later tries to recreate the Conda environment from the `your_env.yml` file. The presence of the "prefix" allows Conda to know where to create the environment.
 
-When you export the environment using `conda env export`, you might want to exclude the "prefix" line from the exported YAML file if you plan to share the environment file across different systems or users. This is because the specific path may not be valid or appropriate on another system. That's why the `grep -v "^prefix: "` (or `findstr /V "^prefix: "`) is used — it removes the "prefix" line from the exported environment file.
+When you export the environment using `conda env export`, you might want to exclude the "prefix" line from the exported YAML file if you plan to share the environment file across different systems or users. This is because the specific path may not be valid or appropriate on another system. That's why the `grep -v "^prefix: "` (or `findstr /V "^prefix: "`) is used—it removes the "prefix" line from the exported environment file.
 
 ### 2\. Get Rid of Anaconda
 
@@ -88,7 +88,7 @@ Find instructions on how to install Miniconda [here](https://docs.conda.io/proje
 
 ### 4\. Create Miniconda Environments
 
-If you want a clean start, we recommend creating new enviroments. You can use the following command to create a new environment with the latest (at the time of writing) Python version:
+If you want a clean start, we recommend creating new environments. You can use the following command to create a new environment with the latest (at the time of writing) Python version:
 
 ```bash
 cond create -n "your_env" python=3.12
@@ -106,7 +106,7 @@ Alternatively, you can use the following command to recreate a predefined enviro
 conda env create -f your_env.yml
 ```
 
-If you want to specify a different install path than the default for your system (not related to 'prefix' in the `your_env.yml`), just use the `-p` flag followed by the required path. Note that we previously deleted the "prefix" line. However you can use this command if you want to install an environment file with the prefix line still in it.
+If you want to specify a different install path than the default for your system (not related to 'prefix' in `your_env.yml`), just use the `-p` flag followed by the required path. Note that we previously deleted the "prefix" line. However, you can use this command if you want to install an environment file with the prefix line still in it.
 
 ```bash
 conda env create -f your_env.yml -p /home/user/anaconda3/envs/env_name
