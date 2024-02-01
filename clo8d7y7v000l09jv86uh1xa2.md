@@ -4,7 +4,7 @@ datePublished: Fri Oct 27 2023 08:42:37 GMT+0000 (Coordinated Universal Time)
 cuid: clo8d7y7v000l09jv86uh1xa2
 slug: azure-machine-learning-exploring-data-concepts
 cover: https://cdn.hashnode.com/res/hashnode/image/upload/v1698395763432/2761d97f-7fde-47c5-a7db-0b6f0b72f7a0.png
-tags: data-science, data-management, azure-machine-learning, data-assets
+tags: data-science, data-management, azureml, azure-machine-learning, data-assets
 
 ---
 
